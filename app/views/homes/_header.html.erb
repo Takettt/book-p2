@@ -1,0 +1,47 @@
+<header style="background-color:#212529;">
+  <div class="container">
+    <div class="row">
+      <div class=" col-4 mr-auto m-3">
+        <%= link_to root_path do %>
+         <span class="mr-auto">Bookers</span>
+        <% end %>
+      </div>
+      <div class=" col-4 ml-auto m-3">
+        <% if user_signed_in? %>
+        <%= link_to root_path do %>
+          <i class="fa-solid fa-house">Home</i>
+        <% end %>
+
+        <%= link_to about_path do %>
+          <i class="fa-solid fa-link">About</i>
+        <% end %>
+
+        <%= link_to new_user_registration_path do %>
+          <i class="fa-solid fa-user-plus">Sign up</i>
+        <% end %>
+
+        <%= link_to new_user_session_path do %>
+          <i class="fa-solid fa-arrow-right-to-bracket">Log in</i>
+        <% end %>
+      <% else %>
+        <%= link_to root_path do %>
+            <i class="fa-solid fa-house">Home</i>
+          <% end %>
+
+          <%= link_to about_path do %>
+            <i class="fa-solid fa-link">User</i>
+          <% end %>
+
+          <%= link_to new_user_registration_path do %>
+            <i class="fa-solid fa-user-plus">Books</i>
+          <% end %>
+
+          <%= link_to new_user_session_path do %>
+            <i class="fa-solid fa-arrow-right-to-bracket">Log out</i>
+          <% end %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+</header>
+
