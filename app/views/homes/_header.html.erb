@@ -8,6 +8,22 @@
       </div>
       <div class=" col-4 ml-auto m-3">
         <% if user_signed_in? %>
+          <%= link_to user_path(current_user) do %>
+            <i class="fa-solid fa-house">Home</i>
+          <% end %>
+
+          <%= link_to users_path do %>
+            <i class="fa-solid fa-link">User</i>
+          <% end %>
+
+          <%= link_to books_path do %>
+            <i class="fa-solid fa-user-plus">Books</i>
+          <% end %>
+
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa-solid fa-arrow-right-to-bracket">Log out</i>
+          <% end %>
+      <% else %>
         <%= link_to root_path do %>
           <i class="fa-solid fa-house">Home</i>
         <% end %>
@@ -22,22 +38,7 @@
 
         <%= link_to new_user_session_path do %>
           <i class="fa-solid fa-arrow-right-to-bracket">Log in</i>
-        <% end %>
-      <% else %>
-        <%= link_to root_path do %>
-            <i class="fa-solid fa-house">Home</i>
-          <% end %>
-
-          <%= link_to about_path do %>
-            <i class="fa-solid fa-link">User</i>
-          <% end %>
-
-          <%= link_to new_user_registration_path do %>
-            <i class="fa-solid fa-user-plus">Books</i>
-          <% end %>
-
-          <%= link_to new_user_session_path do %>
-            <i class="fa-solid fa-arrow-right-to-bracket">Log out</i>
+        
           <% end %>
         <% end %>
         </div>
