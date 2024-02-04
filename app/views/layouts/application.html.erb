@@ -12,6 +12,12 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <%= flash[:notice] %>
+    <% else %>
+      <%= flash[:alert] %>
+    <% end %>
+
     <%= render "homes/header" %>
     <%= yield %>
     <%= render "homes/footer" %>
