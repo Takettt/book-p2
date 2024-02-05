@@ -59,16 +59,16 @@
               <% end %>
             </td>
             <td>
-              <%= link_to book.title, book_path %>
+              <%= link_to book.title, book_path(book) %>
             </td>
             <td>
               <%= book.option %>
             </td>
             <td>
-              <%= link_to "Edit", edit_book_path(book.id) %>
+              <%= link_to "Edit", edit_book_path(book.user) %>
             </td>
             <td>
-              <%= link_to "Destroy", user_path(book.id), method: :delete %>
+              <%= link_to "Destroy", book_path(book.id), method: :delete %>
             </td>
           </tr>
         <% end %>
