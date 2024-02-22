@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-3">
-      <%= render 'form', user: @user, book: @book %>
+      <%= render 'form', user: @user, book: @book_new %>
     </div>
     <div class="col-8">
       <table class="table">
@@ -24,6 +24,16 @@
           <% end %>
         </tr>
       </table>
+      <% @book.book_comments.each do |book_comment| %>
+        <p image_tag book_comments.user.profile_image(100, 100)></p>
+        <%= book_comment.user.name %>
+        <%= book_comment.comment %>
+      <% end %>
+
+      <%= form_for [@book, @book_comment] do |f| %>
+        <%= f.text_area :comment, rows: 5, placeholder: 'コメントをここに' %>
+        <%= f.submit '送信' %>
+      <% end %>
     </div>
-  </div> 
+  </div>
 </div>
