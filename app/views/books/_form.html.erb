@@ -29,3 +29,12 @@
       <%= f.text_area :option, class: "form-control" %><br>
       <%= f.submit "Create Book" %>
   <% end %>
+
+  <select name='add'>
+    <option value="未選択">'選択してください'</option>
+      <?php
+        for($a=1; $a<=10; $a++){
+          echo"<option value='{$a}'>{$a}</option>"
+        }
+      ?>
+  </select>
